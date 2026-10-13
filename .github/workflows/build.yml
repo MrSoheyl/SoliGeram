@@ -17,12 +17,25 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install Android SDK
+        run: |
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+          mkdir -p $HOME/android/cmdline-tools
+          unzip -q commandlinetools-linux-11076708_latest.zip -d $HOME/android/cmdline-tools
+          mv $HOME/android/cmdline-tools/cmdline-tools $HOME/android/cmdline-tools/latest
+          export ANDROID_HOME=$HOME/android
+          export PATH=$PATH:$HOME/android/cmdline-tools/latest/bin:$HOME/android/platform-tools
+          yes | sdkmanager --sdk_root=$HOME/android --licenses > /dev/null 2>&1
+          sdkmanager --sdk_root=$HOME/android "platforms;android-34" "build-tools;34.0.0"
+          echo "ANDROID_HOME=$HOME/android" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$HOME/android" >> $GITHUB_ENV
+          echo "$HOME/android/cmdline-tools/latest/bin" >> $GITHUB_PATH
+          echo "$HOME/android/build-tools/34.0.0" >> $GITHUB_PATH
+
       - name: Build APK
         run: |
-          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null 2>&1 || true
-          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-34" "build-tools;34.0.0" > /dev/null 2>&1 || true
           chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
