@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  Ghost Mode                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="👻 Ghost Mode">
+
+        <SwitchPreferenceCompat
+            app:key="hide_seen"
+            app:title="Hide Seen (all)"
+            app:summary="Don't send read receipts in any dialog"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="hide_seen_private"
+            app:title="Hide Seen (private chats)"
+            app:summary="Only suppress read receipts in DMs"
+            app:defaultValue="false"
+            app:dependency="hide_seen" />
+
+        <SwitchPreferenceCompat
+            app:key="hide_seen_channel"
+            app:title="Hide Seen (channels/groups)"
+            app:summary="Only suppress read receipts in channels and groups"
+            app:defaultValue="false"
+            app:dependency="hide_seen" />
+
+        <SwitchPreferenceCompat
+            app:key="hide_typing"
+            app:title="Hide Typing"
+            app:summary="Never send the 'typing…' indicator"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="hide_online"
+            app:title="Hide Online Status"
+            app:summary="Suppress online presence pings (best-effort)"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="hide_story_view"
+            app:title="Hide Story View"
+            app:summary="Watch stories without marking them as seen"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  Premium                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="💎 Premium">
+
+        <SwitchPreferenceCompat
+            app:key="fake_premium"
+            app:title="Local Premium"
+            app:summary="Enable premium UI gates client-side (no server bypass)"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  Messages                                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="💬 Messages">
+
+        <SwitchPreferenceCompat
+            app:key="show_deleted_messages"
+            app:title="Show Deleted Messages"
+            app:summary="Save and display messages before they are deleted"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="save_edit_history"
+            app:title="Save Edit History"
+            app:summary="Record all versions of edited messages"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="mark_messages_deleted"
+            app:title="Mark Deleted Messages"
+            app:summary="Show 🗑 label on messages deleted by sender"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="mark_messages_edited"
+            app:title="Mark Edited Messages"
+            app:summary="Show ✎ label on edited messages"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  Media                                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="📸 Media">
+
+        <SwitchPreferenceCompat
+            app:key="allow_save_media"
+            app:title="Allow Saving Media"
+            app:summary="Remove noforwards restriction from message menu"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="prevent_secret_delete"
+            app:title="Prevent Secret Media Deletion"
+            app:summary="Cancel the self-destruct timer in secret chats"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="allow_screenshots"
+            app:title="Allow Screenshots"
+            app:summary="Strip FLAG_SECURE from secret chat windows"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  Download                                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="⚡ Download">
+
+        <SwitchPreferenceCompat
+            app:key="boost_download"
+            app:title="Boost Download Speed"
+            app:summary="Increase chunk size and concurrent request count"
+            app:defaultValue="false" />
+
+        <ListPreference
+            app:key="boost_download_level"
+            app:title="Boost Level"
+            app:summary="%s"
+            app:entries="@array/boost_entries"
+            app:entryValues="@array/boost_values"
+            app:defaultValue="0"
+            app:dependency="boost_download" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  Channels                                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="📢 Channels">
+
+        <SwitchPreferenceCompat
+            app:key="unlock_channel_features"
+            app:title="Unlock Channel Features"
+            app:summary="Bypass noforwards and content protection flags"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="hide_proxy_sponsor"
+            app:title="Hide Proxy Sponsor Banner"
+            app:summary="Remove the Sponsored by… message in chats"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  UI / Misc                                                       -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="🎨 UI / Misc">
+
+        <SwitchPreferenceCompat
+            app:key="hide_update_notif"
+            app:title="Hide Update Notification"
+            app:summary="Suppress in-app update dialogs"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="show_user_id"
+            app:title="Show User ID"
+            app:summary="Display Telegram numeric ID on profile pages"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="show_creation_date"
+            app:title="Show Account Creation Date"
+            app:summary="Estimate account age from Telegram ID"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  About                                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory app:title="ℹ️ About">
+
+        <Preference
+            app:title="SoliGeram v1.1.0"
+            app:summary="Developer: @qlhlb | Channel: @magisk_iran" />
+
+        <Preference
+            app:title="Telegram Channel"
+            app:summary="@magisk_iran" />
+
+        <Preference
+            app:title="Developer Contact"
+            app:summary="@qlhlb" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
