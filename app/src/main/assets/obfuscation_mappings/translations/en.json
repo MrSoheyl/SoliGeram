@@ -1,0 +1,18 @@
+{
+  "AppName": "SoliGeram",
+  "app_description": "Advanced Telegram Enhancement | @qlhlb | @magisk_iran",
+
+  "module_not_active": "⚠️ Module not active! Enable in LSPosed.",
+  "module_active": "✅ Module is active",
+
+  "ProfileCopyUserId": "Copy ID",
+  "ProfileCopyChatId": "Copy Chat ID",
+  "ProfileStatusOffline": "offline",
+  "CopiedToClipboardHint": "'{item}' copied",
+  "chat_scroll_to_top": "Scroll to top",
+
+  "deleted_message_label": "🗑 Deleted",
+  "edited_message_label": "✎ Edited",
+  "secret_media_saved": "Media saved by SoliGeram",
+  "boost_active": "Download boost active"
+}
