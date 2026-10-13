@@ -121,7 +121,7 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 #### 5. فعال‌سازی در LSPosed
 1. برنامه LSPosed را باز کنید
 2. به بخش **Modules** بروید
-3. **Telcom** را پیدا کنید
+3. **SoliGeram** را پیدا کنید
 4. Enable کنید ✅
 5. در Scope، **Telegram** را اضافه کنید
 6. **Reboot** یا Force Stop + Restart تلگرام
