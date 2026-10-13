@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SoliGeram icon: shield + signal bars = security + comms -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#FF00796B"
+        android:pathData="M54,54m-54,0a54,54 0,1 1,108 0a54,54 0,1 1,-108 0" />
+
+    <!-- Shield body -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54,18 L30,28 L30,54 C30,67 41,77 54,82 C67,77 78,67 78,54 L78,28 Z" />
+
+    <!-- Shield inner teal -->
+    <path
+        android:fillColor="#FF00796B"
+        android:pathData="M54,24 L35,32.5 L35,54 C35,64.5 43.5,73 54,77.5 C64.5,73 73,64.5 73,54 L73,32.5 Z" />
+
+    <!-- Signal bar 1 (small) -->
+    <rect
+        android:fillColor="#FFFFFFFF"
+        android:x="38" android:y="58"
+        android:width="5" android:height="8"
+        android:rx="1" />
+
+    <!-- Signal bar 2 (medium) -->
+    <rect
+        android:fillColor="#FFFFFFFF"
+        android:x="46" android:y="52"
+        android:width="5" android:height="14"
+        android:rx="1" />
+
+    <!-- Signal bar 3 (large) -->
+    <rect
+        android:fillColor="#FFFFFFFF"
+        android:x="54" android:y="45"
+        android:width="5" android:height="21"
+        android:rx="1" />
+
+    <!-- Signal bar 4 (full) -->
+    <rect
+        android:fillColor="#FFFFFFFF"
+        android:x="62" android:y="38"
+        android:width="5" android:height="28"
+        android:rx="1" />
+
+</vector>
