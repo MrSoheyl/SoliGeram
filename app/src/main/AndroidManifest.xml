@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.DUMP" />
+
+    <application
+        android:name=".SoliApp"
+        android:allowBackup="false"
+        android:directBootAware="true"
+        android:extractNativeLibs="false"
+        android:icon="@drawable/ic_telcom"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.SoliGeram">
+
+        <!-- Main launcher activity -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LSPosed module settings entry -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity>
+
+        <!-- libxposed service provider -->
+        <provider
+            android:name="io.github.libxposed.service.XposedProvider"
+            android:authorities="${applicationId}"
+            android:directBootAware="true"
+            android:exported="true"
+            android:multiprocess="false">
+            <intent-filter>
+                <action android:name="io.github.libxposed.service.XposedProvider" />
+            </intent-filter>
+        </provider>
+
+        <!-- LSPosed meta-data -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription" android:value="SoliGeram - Advanced Telegram Enhancement Module" />
+            android:value="SoliGeram - Advanced Telegram Enhancement Module" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@xml/scope" />
+
+    </application>
+
+</manifest>
